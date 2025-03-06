@@ -1,0 +1,42 @@
+using System.Runtime.CompilerServices;
+
+namespace ConsoleApp2
+{
+    internal class Student
+    {
+        public string fullName;
+        public DateTime birthDate;
+        public int[] grades;
+        static void Main(string[] args)
+        {
+            Student std = new Student("Svyatoslav Steckiy", new DateOnly(2006, 08, 30), [3, 4, 4, 5, 2, 3, 5, 5, 3,5]);
+            std.ToString();
+        }
+        public Student(string fullName, DateTime birthDate, int[] grades)
+        {
+            this.fullName = fullName;
+            this.birthDate = birthDate;
+            this.grades = grades;
+        }
+
+
+        public override string ToString()
+        {
+            return $"{fullName} ({birthDate:dd.MM.yyyy}) - Оценки: {string.Join(", ", grades)}";
+        }
+
+
+        public void ChangeLastName(string newLastName)
+        {
+            string[] parts = fullName.Split(' ');
+            parts[0] = newLastName;
+            fullName = string.Join(" ", parts);
+        }
+
+
+        public void UpdateGrades(int[] newGrades)
+        {
+            grades = newGrades;
+        }
+    }
+}
