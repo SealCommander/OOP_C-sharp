@@ -1,0 +1,31 @@
+ internal class Square
+ {
+     public int X; 
+     public int Y;
+     public int SideLength; 
+     // Конструктор
+     public Square(int x, int y, int sideLength)
+     {
+         X = x;
+         Y = y;
+         SideLength = sideLength;
+     }
+
+     public override string ToString()
+     {
+         return $"Квадрат [X={X}, Y={Y}, Сторона={SideLength}]";
+     }
+
+
+     public void Resize(int newLength)
+     {
+         SideLength = newLength;
+     }
+
+
+     public void Move(int newX, int newY)
+     {
+         X = newX;
+         Y = newY;
+     }
+ }
